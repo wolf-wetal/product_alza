@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <div class="container">
+        <dl class="row">
+            <dt class="col-sm-3">Наименование:</dt>
+            <dd class="col-sm-9">{{ product.name }}</dd>
+
+            <dt class="col-sm-3">Цена:</dt>
+            <dd class="col-sm-9">{{ product.price }}</dd>
+
+            <dt class="col-sm-3">Описание:</dt>
+            <dd class="col-sm-9">{{ product.description }}</dd>
+
+            <dt class="col-sm-3">Изображение:</dt>
+            <dd class="col-sm-9">
+                {% if product.image %}
+                    <img src="{{ asset('images/products/' ~ product.image) }}" alt="Product Image"
+                         class="img-thumbnail">
+                {% else %}
+                    Изображение отсутствует
+                {% endif %}
+            </dd>
+        </dl>
+
+        <a href="{{ path('product_list') }}" class="btn btn-primary">Назад</a>
+    </div>
+{% endblock %}
+

@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <div class="container">
+        <h1>Добавить продукт</h1>
+
+        {{ form_start(form) }}
+
+        <div class="form-group">
+            {{ form_label(form.alzaUrl, 'Alza URL') }}
+            {{ form_widget(form.alzaUrl, {'attr': {'class': 'form-control'}}) }}
+        </div>
+
+        <div class="form-group product-disabled">
+            {{ form_label(form.name) }}
+            {{ form_widget(form.name, {'attr': {'class': 'form-control'}}) }}
+        </div>
+
+        <div class="form-group product-disabled">
+            {{ form_label(form.price) }}
+            {{ form_widget(form.price, {'attr': {'class': 'form-control'}}) }}
+        </div>
+
+        <div class="form-group product-disabled">
+            {{ form_label(form.description) }}
+            {{ form_widget(form.description, {'attr': {'class': 'form-control'}}) }}
+        </div>
+
+        <div class="form-group product-disabled">
+            {{ form_label(form.image) }}
+            {{ form_widget(form.image, {'attr': {'class': 'form-control'}}) }}
+        </div>
+
+        <div class="btn-group">
+            <button type="submit" class="btn btn-primary">Парсить с URL</button>
+            <span class="mx-2"></span>
+            <a href="{{ path('product_list') }}" class="btn btn-secondary">Назад</a>
+        </div>
+
+        {{ form_end(form) }}
+
+    </div>
+{% endblock %}
