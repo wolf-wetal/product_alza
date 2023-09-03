@@ -62,7 +62,7 @@ class ProductController extends AbstractController
         ]);
     }
 
-    #[Route('/product-list', name: 'product_list')]
+    #[Route('/', name: 'product_list')]
     public function productList(): Response
     {
         $products = $this->entityManager->getRepository(Products::class)->findAll();
