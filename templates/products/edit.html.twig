@@ -38,11 +38,6 @@
             <span class="mx-2"></span>
             <a href="{{ path('product_list') }}" class="btn btn-secondary">Назад</a>
             <span class="mx-2"></span>
-            <form method="post" action="{{ path('product_delete', {'id': product.id}) }}"
-                  onsubmit="return confirm('Вы уверены что хотите удалить этот продукт')">
-                <input type="hidden" name="_method" value="POST">
-                <button type="submit" class="btn btn-danger">Удалить</button>
-            </form>
         </div>
 
         {{ form_end(form) }}
